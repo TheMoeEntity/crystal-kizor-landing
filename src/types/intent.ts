@@ -1,4 +1,5 @@
 import type { VisitorIntent } from "./brand";
+import type { AnchorHref } from "./common";
 
 export interface IntentPath {
   intent: VisitorIntent;
@@ -7,6 +8,6 @@ export interface IntentPath {
   description: string;
   cta: {
     label: string;
-    href: `#${string}`;
+    href: AnchorHref;
   };
 }

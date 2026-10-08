@@ -4,5 +4,6 @@ export interface SiteConfig {
   title: string;
   description: string;
   locale: string;
+  attribution: string;
   indexable: boolean;
 }

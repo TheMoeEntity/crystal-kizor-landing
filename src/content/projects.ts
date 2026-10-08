@@ -1,51 +1,48 @@
+import { projectImages } from "@/content/media";
 import type { Project } from "@/types/project";
+import type { ProjectStatus } from "@/types/project";
 
-const BASE = "https://studiocoka.com/projects";
+const STUDIO_PROJECTS = "https://studiocoka.com/projects";
 
 const projects: readonly Project[] = [
   {
-    slug: "tesh-nsukka",
-    name: "TESH Nsukka",
-    type: "Healthcare / Renovation",
-    location: "Nsukka, Nigeria",
+    slug: "nature-home",
+    name: "Nature Home",
+    type: "Private Residential",
+    location: null,
     year: null,
-    summary: "A derelict building turned into Nsukka's first eye hospital, powered fully by solar.",
-    href: `${BASE}/nigeria-first-off-grid-hospital`,
-    image: null,
+    status: "built",
+    summary:
+      "A completed family home shaded by mature trees and deep cantilevered roofs, with warm timber-lined interiors.",
+    href: null,
+    cover: projectImages.natureHome.cantileverShade,
+    gallery: [
+      projectImages.natureHome.frontTreeShade,
+      projectImages.natureHome.slattedDivider,
+      projectImages.natureHome.familySittingRoom,
+      projectImages.natureHome.study,
+      projectImages.natureHome.backGarden,
+    ],
     featured: true,
   },
   {
-    slug: "international-event-center-enugu",
-    name: "International Event Center",
-    type: "Civic / Cultural",
-    location: "Enugu, Nigeria",
-    year: 2024,
-    summary: "Deep overhangs and layered facades cut heat gain before any mechanical cooling.",
-    href: `${BASE}/international-event-center-enugu`,
-    image: null,
-    featured: true,
-  },
-  {
-    slug: "garden-home-kigali",
-    name: "Garden Home",
-    type: "Residential",
-    location: "Kigali, Rwanda",
+    slug: "community-centre",
+    name: "Community Centre",
+    type: "Civic / Community",
+    location: null,
     year: null,
-    summary: "A tropical home designed to work with the climate rather than against it.",
-    href: `${BASE}/garden-home-kigali`,
-    image: null,
+    status: "visualisation",
+    summary:
+      "Organised around a shaded courtyard tree, with perforated brick screens that let air and filtered light move through.",
+    href: null,
+    cover: projectImages.communityCentre.courtyardTree,
+    gallery: [
+      projectImages.communityCentre.screenGallery,
+      projectImages.communityCentre.exterior,
+      projectImages.communityCentre.amphitheatre,
+      projectImages.communityCentre.corridor,
+    ],
     featured: true,
-  },
-  {
-    slug: "pine-towers-enugu",
-    name: "Pine Towers",
-    type: "Mixed-use",
-    location: "Enugu, Nigeria",
-    year: null,
-    summary: null,
-    href: `${BASE}/pine-towers-enugu`,
-    image: null,
-    featured: false,
   },
   {
     slug: "nature-home-2",
@@ -53,10 +50,17 @@ const projects: readonly Project[] = [
     type: "Private Residential",
     location: "Enugu, Nigeria",
     year: null,
-    summary: null,
-    href: `${BASE}/nature-home-2`,
-    image: null,
-    featured: false,
+    status: "visualisation",
+    summary:
+      "A low, earth-walled home that opens fully to its garden, with lattice roofs filtering light into the living spaces.",
+    href: `${STUDIO_PROJECTS}/nature-home-2`,
+    cover: projectImages.natureHome2.gardenExterior,
+    gallery: [
+      projectImages.natureHome2.courtyardBedroom,
+      projectImages.natureHome2.kitchen,
+      projectImages.natureHome2.dining,
+    ],
+    featured: true,
   },
 ];
 
@@ -65,6 +69,19 @@ export async function getProjects(): Promise<readonly Project[]> {
 }
 
 export async function getFeaturedProjects(): Promise<readonly Project[]> {
-  const projects = await getProjects();
-  return projects.filter((project) => project.featured);
+  const all = await getProjects();
+  return all.filter((project) => project.featured);
+}
+
+const statusLabels: Record<ProjectStatus, string> = {
+  built: "Built",
+  visualisation: "Visualisation",
+};
+
+export function getStatusLabel(status: ProjectStatus): string {
+  return statusLabels[status];
+}
+
+export async function getPortfolioLink(): Promise<{ href: string; label: string }> {
+  return { href: STUDIO_PROJECTS, label: "See every project on Studio COKA" };
 }

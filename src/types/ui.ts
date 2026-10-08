@@ -19,3 +19,57 @@ export interface ButtonLinkProps {
 export interface BreezeScreenProps {
   className?: string;
 }
+import type { ImageAsset } from "./media";
+
+export interface PictureProps {
+  image: ImageAsset;
+  sizes: string;
+  preload?: boolean;
+  className?: string;
+}
+
+export interface TextLinkProps {
+  href: string;
+  className?: string;
+  children: ReactNode;
+}
+
+import type { Brand, BrandLink } from "./brand";
+import type { BenchmarkProject } from "./profile";
+import type { Project } from "./project";
+import type { SectionCopy } from "./section";
+
+export type Tone = "light" | "dark";
+
+export interface ToneStyle {
+  muted: string;
+  border: string;
+  link: string;
+}
+
+export interface SectionHeaderProps {
+  id: string;
+  copy: SectionCopy;
+  tone?: Tone;
+  className?: string;
+}
+
+export interface BrandActionProps {
+  link: BrandLink;
+  tone?: Tone;
+  className?: string;
+}
+
+export interface BrandEntryProps {
+  brand: Brand;
+  tone?: Tone;
+}
+
+export interface BenchmarkProps {
+  benchmark: BenchmarkProject;
+}
+
+export interface ProjectFeatureProps {
+  project: Project;
+  reverse?: boolean;
+}

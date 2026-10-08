@@ -8,7 +8,7 @@ const brands: readonly Brand[] = [
     description:
       "A design-build studio creating climate-responsive buildings and interiors that cut energy demand and improve comfort.",
     intent: "build",
-    link: { kind: "external", href: "https://studiocoka.com" },
+    link: { kind: "external", href: "https://studiocoka.com", label: "Visit Studio COKA" },
     featured: true,
   },
   {
@@ -38,17 +38,17 @@ const brands: readonly Brand[] = [
     description:
       "Research, writing and media on architecture, climate and the built environment, published under Crystal's own name.",
     intent: "learn",
-    link: { kind: "external", href: "https://studiocoka.com/journal" },
+    link: { kind: "external", href: "https://studiocoka.com/journal", label: "Read the journal" },
     featured: false,
   },
   {
     slug: "speaking",
-    name: "Speaking",
+    name: "Speaking engagements",
     category: "Talks & Conversations",
     description:
       "Talks on architecture, climate-responsive design, African cities, entrepreneurship and the built environment.",
     intent: "book",
-    link: { kind: "internal", href: "#enquire" },
+    link: { kind: "internal", href: "#enquire", label: "Book a talk" },
     featured: true,
   },
   {
@@ -73,10 +73,11 @@ const brands: readonly Brand[] = [
   },
 ];
 
-export function getBrands(): readonly Brand[] {
+export async function getBrands(): Promise<readonly Brand[]> {
   return brands;
 }
 
-export function getBrandsByIntent(intent: VisitorIntent): readonly Brand[] {
-  return brands.filter((brand) => brand.intent === intent);
+export async function getBrandsByIntent(intent: VisitorIntent): Promise<readonly Brand[]> {
+  const all = await getBrands();
+  return all.filter((brand) => brand.intent === intent);
 }

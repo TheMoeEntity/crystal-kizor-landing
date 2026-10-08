@@ -4,6 +4,7 @@ import type { LayoutProps } from "@/types/common";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps) {
         </a>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

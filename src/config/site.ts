@@ -9,4 +9,5 @@ export const siteConfig: SiteConfig = {
     "Architect and founder of Studio COKA, designing climate-responsive buildings, furniture, education and community programmes rooted in African context.",
   locale: "en_NG",
   indexable: env.SITE_INDEXABLE,
+  attribution: "Candidate assessment by Moses Nwigberi. Not an official Crystal Kizor website.",
 };
