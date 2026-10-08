@@ -3,6 +3,7 @@ import { Archivo } from "next/font/google";
 import type { LayoutProps } from "@/types/common";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
+import { Header } from "@/components/layout/Header";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -42,7 +43,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" className={archivo.variable}>
-      <body className="bg-concrete text-canopy font-sans antialiased">{children}</body>
+      <body className="bg-concrete text-canopy font-sans antialiased">
+        <a
+          href="#main"
+          className="focus:bg-canopy focus:text-limewash sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2"
+        >
+          Skip to content
+        </a>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

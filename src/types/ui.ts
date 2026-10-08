@@ -6,3 +6,16 @@ export interface ContainerProps {
   className?: string;
   children: ReactNode;
 }
+
+export type ButtonVariant = "primary" | "secondary";
+
+export interface ButtonLinkProps {
+  href: string;
+  variant?: ButtonVariant;
+  className?: string;
+  children: ReactNode;
+}
+
+export interface BreezeScreenProps {
+  className?: string;
+}

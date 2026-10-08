@@ -19,6 +19,24 @@
   --text-heading: clamp(2rem, 4vw, 3.5rem);
   --text-heading--line-height: 1.05;
   --text-heading--letter-spacing: -0.01em;
+
+  /* Animations */
+  --animate-sun-drift: sun-drift 18s ease-in-out infinite alternate;
+
+  @keyframes sun-drift {
+    from {
+      transform: translate3d(-8%, -6%, 0);
+    }
+    to {
+      transform: translate3d(8%, 6%, 0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Expanded width for display type: the signage voice */

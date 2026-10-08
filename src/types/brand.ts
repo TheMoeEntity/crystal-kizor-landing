@@ -1,9 +1,9 @@
+import { AnchorHref } from "./common";
+
 export type VisitorIntent = "build" | "learn" | "book" | "support";
 
 export type BrandLink =
-  | { kind: "external"; href: string }
-  | { kind: "internal"; href: `#${string}` }
-  | { kind: "pending" };
+  { kind: "external"; href: string } | { kind: "internal"; href: AnchorHref } | { kind: "pending" };
 
 export interface Brand {
   slug: string;

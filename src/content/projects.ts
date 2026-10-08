@@ -60,10 +60,11 @@ const projects: readonly Project[] = [
   },
 ];
 
-export function getProjects(): readonly Project[] {
+export async function getProjects(): Promise<readonly Project[]> {
   return projects;
 }
 
-export function getFeaturedProjects(): readonly Project[] {
+export async function getFeaturedProjects(): Promise<readonly Project[]> {
+  const projects = await getProjects();
   return projects.filter((project) => project.featured);
 }
