@@ -2,6 +2,7 @@ import type { Profile } from "@/types/profile";
 
 const profile: Profile = {
   name: "Crystal Kizor",
+  jobTitle: "Design Director, Studio COKA",
   roles: ["Architect", "Designer", "Entrepreneur", "Speaker", "Researcher"],
   thesis: "Designing for how people were meant to live.",
   summary:

@@ -16,6 +16,7 @@ export interface Profile {
   name: string;
   roles: readonly string[];
   thesis: string;
+  jobTitle: string;
   summary: string;
   credentials: readonly string[];
   benchmark: BenchmarkProject;
