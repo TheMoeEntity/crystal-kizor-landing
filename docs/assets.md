@@ -14,10 +14,10 @@ Ink colour sampled from the artwork: `#241207`.
 
 | File | Use | Size |
 |---|---|---|
-| `brand/logo-horizontal.png` | Header wordmark | 539×48 |
-| `brand/logo-primary.png` | Stacked wordmark (footer / about) | 770×348 |
-| `brand/logo-monogram.png` | CK monogram (favicon, social avatar) | 207×165 |
-| `brand/logo-signature.png` | Signature mark | 410×137 |
+| `brand/logo-primary.png` | Hero heading (`<h1>`) | 770×348 |
+| `brand/logo-monogram.png` | Header, favicon and app icons | 207×165 |
+| `brand/logo-signature.png` | Footer | 410×137 |
+| `brand/logo-horizontal.png` | Enquiry email header | 539×48 |
 
 No logos were supplied for Studio COKA, AKO Alliance, ELEvated, TEA or Alive and Free.
 
@@ -29,19 +29,18 @@ No logos were supplied for Studio COKA, AKO Alliance, ELEvated, TEA or Alive and
 | Nature Home 2 | **Visualisation – renders** | garden-exterior, courtyard-bedroom, kitchen, dining |
 | Community Centre | **Visualisation – renders** | courtyard-tree, exterior, screen-gallery, amphitheatre, corridor |
 
-⚠️ Renders must be labelled as visualisations on the page. Presenting them as completed
-buildings would misrepresent the work.
+Renders are labelled "Visualisation" on the page so they are not mistaken for completed buildings.
 
 ## Portraits
 
 From `Crystal's pictures` (6 files, 12.4 MB → 0.75 MB). Kept at source resolution
 (max 1536px; never upscaled), so no portrait should render wider than ~768 CSS px.
 
-| File | Size | Planned use |
+| File | Size | Use |
 |---|---|---|
-| `portraits/standing-studio.webp` | 1024×1536 | Hero (portrait orientation) |
+| `portraits/standing-studio.webp` | 1024×1536 | Hero |
 | `portraits/arms-crossed-moodboard.webp` | 1374×1145 | About |
-| `portraits/podcast-microphone.webp` | 1374×1145 | Ideas — TEA / speaking / media |
-| `portraits/editorial-armchair.webp` | 1373×1145 | Mission or speaking |
-| `portraits/desk-white-shirt.webp` | 1374×1145 | Spare / Open Graph image |
-| `portraits/desk-brown-shirt.webp` | 1374×1145 | Spare |
+| `portraits/podcast-microphone.webp` | 1374×1145 | Ideas section |
+| `portraits/editorial-armchair.webp` | 1373×1145 | Not used (available) |
+| `portraits/desk-white-shirt.webp` | 1374×1145 | Not used (available) |
+| `portraits/desk-brown-shirt.webp` | 1374×1145 | Not used (available) |

@@ -2,7 +2,7 @@
 
 A single-page site that brings Crystal Kizor's seven brands together under one personal brand. Built for Studio COKA's Web Developer assessment (Stage 1).
 
-**Live site:** _add Vercel URL after deploy_
+**Live site:** [crystal-kizor-landing.vercel.app](https://crystal-kizor-landing.vercel.app)
 
 > This is a candidate assessment, not an official Crystal Kizor website. It is excluded from search engines (`noindex`).
 
@@ -14,12 +14,12 @@ A single-page site that brings Crystal Kizor's seven brands together under one p
 
 Crystal's work spans architecture, furniture, education, speaking, writing and two mission-driven initiatives. Listing seven brands side by side would read as unrelated businesses, so the page works as a **router**: every brand sits under one of four visitor intents.
 
-| Path | For | Brands |
-|---|---|---|
-| Build with her | Clients and specifiers | Studio COKA, ELEvated |
-| Learn from her | Architects and students | The Effective Architect, Research & Writing |
-| Book her to speak | Event organisers and media | Speaking engagements |
-| Join the mission | Partners, donors and young people | AKO Alliance, Alive and Free |
+| Path              | For                               | Brands                                      |
+| ----------------- | --------------------------------- | ------------------------------------------- |
+| Build with her    | Clients and specifiers            | Studio COKA, ELEvated                       |
+| Learn from her    | Architects and students           | The Effective Architect, Research & Writing |
+| Book her to speak | Event organisers and media        | Speaking engagements                        |
+| Join the mission  | Partners, donors and young people | AKO Alliance, Alive and Free                |
 
 The page leads with proof (Nigeria's first off-grid hospital and its measured results) and every path ends in one enquiry form that adapts to the visitor's intent.
 
@@ -82,22 +82,22 @@ cp .env.example .env.local   # then fill in the values below
 pnpm dev
 ```
 
-| Variable | Purpose |
-|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Absolute site URL, used for metadata and email links |
-| `SITE_INDEXABLE` | `false` adds `noindex`; set `true` only for the real site |
-| `RESEND_API_KEY` | Resend API key (starts with `re_`) |
-| `ENQUIRY_TO` | Inbox that receives enquiries |
-| `ENQUIRY_FROM` | Sender, e.g. `Crystal Kizor website <onboarding@resend.dev>` |
+| Variable               | Purpose                                                      |
+| ---------------------- | ------------------------------------------------------------ |
+| `NEXT_PUBLIC_SITE_URL` | Absolute site URL, used for metadata and email links         |
+| `SITE_INDEXABLE`       | `false` adds `noindex`; set `true` only for the real site    |
+| `RESEND_API_KEY`       | Resend API key (starts with `re_`)                           |
+| `ENQUIRY_TO`           | Inbox that receives enquiries                                |
+| `ENQUIRY_FROM`         | Sender, e.g. `Crystal Kizor website <onboarding@resend.dev>` |
 
 Environment variables are validated when the server starts: an invalid value stops `pnpm dev` and fails the build with a message naming the variable.
 
-| Script | Does |
-|---|---|
-| `pnpm dev` | Development server |
+| Script                      | Does                        |
+| --------------------------- | --------------------------- |
+| `pnpm dev`                  | Development server          |
 | `pnpm build` / `pnpm start` | Production build and server |
-| `pnpm typecheck` | TypeScript check |
-| `pnpm lint` / `pnpm format` | ESLint and Prettier |
+| `pnpm typecheck`            | TypeScript check            |
+| `pnpm lint` / `pnpm format` | ESLint and Prettier         |
 
 ## The enquiry email
 
@@ -109,20 +109,20 @@ Each enquiry produces a branded HTML email with a plain-text fallback, tagged by
 
 ## Quality
 
-- Lighthouse (mobile): _add scores after deploy_
+- Lighthouse (mobile and desktop): Performance 100, Accessibility 100, Best Practices 100. SEO scores 69 only because of the deliberate `noindex`; it returns to normal when `SITE_INDEXABLE=true`.
 - Keyboard navigable, with visible focus and a skip link; colour contrast checked against WCAG AA
 - Animation respects `prefers-reduced-motion`
 - The enquiry form works with JavaScript disabled
 
 ## Documentation
 
-| File | Contents |
-|---|---|
-| [docs/decisions.md](docs/decisions.md) | Engineering standards, decisions and deferred work |
-| [docs/research.md](docs/research.md) | Public research; source for every fact on the page |
-| [docs/assets.md](docs/assets.md) | Asset inventory and processing |
-| [docs/part-2-ai-tool.md](docs/part-2-ai-tool.md) | Part 2: AI product proposal |
-| [docs/part-3-analytics.md](docs/part-3-analytics.md) | Part 3: analytics and improvement |
+| File                                                 | Contents                                           |
+| ---------------------------------------------------- | -------------------------------------------------- |
+| [docs/decisions.md](docs/decisions.md)               | Engineering standards, decisions and deferred work |
+| [docs/research.md](docs/research.md)                 | Public research; source for every fact on the page |
+| [docs/assets.md](docs/assets.md)                     | Asset inventory and processing                     |
+| [docs/part-2-ai-tool.md](docs/part-2-ai-tool.md)     | Part 2: AI product proposal                        |
+| [docs/part-3-analytics.md](docs/part-3-analytics.md) | Part 3: analytics and improvement                  |
 
 ## Licence
 

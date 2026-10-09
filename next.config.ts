@@ -5,7 +5,6 @@ import { readServerEnv } from "./src/schemas/env.schema";
 readServerEnv(process.env);
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
   images: {
