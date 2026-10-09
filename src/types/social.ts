@@ -1,4 +1,4 @@
-export type SocialLink = {
+export interface SocialLink {
   label: string;
   href: string;
-};
+}

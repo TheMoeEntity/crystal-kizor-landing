@@ -8,6 +8,7 @@
   --color-limewash: #f6f6f3;
   --color-stone: #5c5850;
   --color-ochre: #b8862b;
+  --color-alert: #9a2a1c; /* ~7:1 on limewash */
   --color-ink: #241207; /* sampled from Crystal's logo artwork */
 
   /* Type */
@@ -51,4 +52,14 @@
 }
 :root {
   color-scheme: light;
+}
+
+/* Enquiry form: reveal intent-specific fields with :has(), no JavaScript needed */
+.enquiry-conditional {
+  display: none;
+}
+
+.enquiry-form:has(input[name="intent"][value="build"]:checked) [data-show-for="build"],
+.enquiry-form:has(input[name="intent"][value="book"]:checked) [data-show-for="book"] {
+  display: grid;
 }

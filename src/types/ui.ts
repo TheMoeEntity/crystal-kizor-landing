@@ -47,6 +47,20 @@ export interface ToneStyle {
   link: string;
 }
 
+import type { EnquiryFormCopy } from "./enquiry";
+
+export interface FieldProps {
+  id: string;
+  label: string;
+  optional?: boolean;
+  errors?: readonly string[];
+  children: ReactNode;
+}
+
+export interface EnquiryFormProps {
+  copy: EnquiryFormCopy;
+}
+
 export interface SectionHeaderProps {
   id: string;
   copy: SectionCopy;

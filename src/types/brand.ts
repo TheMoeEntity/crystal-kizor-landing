@@ -1,6 +1,8 @@
 import { AnchorHref } from "./common";
 
-export type VisitorIntent = "build" | "learn" | "book" | "support";
+import type { VISITOR_INTENTS } from "@/constants/intents";
+
+export type VisitorIntent = (typeof VISITOR_INTENTS)[number];
 
 export type BrandLink =
   | { kind: "external"; href: string; label: string }

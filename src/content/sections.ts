@@ -1,6 +1,11 @@
 import type { SectionCopy, SectionKey } from "@/types/section";
 
 const sections: Record<SectionKey, SectionCopy> = {
+  enquire: {
+    title: "Start a conversation",
+    intro:
+      "Tell us what you have in mind, whether it's a project, a talk or a partnership, and it will reach the right part of Crystal's work.",
+  },
   paths: {
     title: "Where would you like to start?",
     intro:

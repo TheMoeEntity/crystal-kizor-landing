@@ -1,4 +1,5 @@
 import { About } from "@/components/sections/About";
+import { Enquire } from "@/components/sections/Enquire";
 import { Hero } from "@/components/sections/Hero";
 import { Ideas } from "@/components/sections/Ideas";
 import { IntentRouter } from "@/components/sections/IntentRouter";
@@ -23,6 +24,7 @@ export default async function HomePage() {
         <Ideas />
         <Mission />
         <About />
+        <Enquire />
       </main>
     </>
   );
