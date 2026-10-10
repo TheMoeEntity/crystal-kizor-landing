@@ -6,6 +6,8 @@ import { siteConfig } from "@/config/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import Link from "next/link";
+import { BackToTop } from "@/components/ui/BackToTop";
+import { getBackToTopLabel } from "@/content/navigation";
 
 const archivo = Archivo({
   subsets: ["latin", "latin-ext"],
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     follow: siteConfig.indexable,
   },
 };
-export default function RootLayout({ children }: LayoutProps) {
+export default async function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" className={archivo.variable}>
       <body className="bg-concrete text-canopy font-sans antialiased">
@@ -55,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps) {
         <Header />
         {children}
         <Footer />
+        <BackToTop label={await getBackToTopLabel()} />
       </body>
     </html>
   );
