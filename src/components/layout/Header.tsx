@@ -21,9 +21,9 @@ export async function Header() {
           <ul className="flex gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="text-stone hover:text-ink transition-colors">
+                <Link href={item.href} className="text-stone hover:text-ink transition-colors">
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -5,6 +5,7 @@ import { getBrands } from "@/content/brands";
 import { brandImages } from "@/content/media";
 import { getSocialLinks } from "@/content/social";
 import { getBrandHref } from "@/utils/brands";
+import Link from "next/link";
 
 export async function Footer() {
   const [brands, socials] = await Promise.all([getBrands(), getSocialLinks()]);
@@ -26,9 +27,9 @@ export async function Footer() {
               return (
                 <li key={brand.slug}>
                   {href ? (
-                    <a href={href} className="text-stone hover:text-ink transition-colors">
+                    <Link href={href} className="text-stone hover:text-ink transition-colors">
                       {brand.name}
-                    </a>
+                    </Link>
                   ) : (
                     <span className="text-stone">
                       {brand.name} <span className="text-sm">(coming soon)</span>
@@ -45,9 +46,9 @@ export async function Footer() {
           <ul className="mt-4 space-y-2">
             {socials.map((social) => (
               <li key={social.href}>
-                <a href={social.href} className="text-stone hover:text-ink transition-colors">
+                <Link href={social.href} className="text-stone hover:text-ink transition-colors">
                   {social.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

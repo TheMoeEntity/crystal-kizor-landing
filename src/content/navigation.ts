@@ -10,3 +10,6 @@ const navItems: readonly NavItem[] = [
 export async function getNavItems(): Promise<readonly NavItem[]> {
   return navItems;
 }
+export async function getBackToTopLabel(): Promise<string> {
+  return "Back to top";
+}
