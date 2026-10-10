@@ -14,8 +14,9 @@ export function groupBrandsByIntent(
 export function getBrandHref(link: BrandLink): string | null {
   switch (link.kind) {
     case "external":
-    case "internal":
       return link.href;
+    case "internal":
+      return `/${link.href}`;
     case "pending":
       return null;
     default:
