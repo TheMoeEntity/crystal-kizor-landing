@@ -1,11 +1,9 @@
 import "server-only";
 import { cacheLife, cacheTag } from "next/cache";
-import { MONTHS, NASA_POWER_PARAMETERS } from "@/constants/climate";
+import { MONTHS, NASA_POWER_PARAMETERS, NASA_POWER_URL } from "@/constants/climate";
 import { fetchJson } from "@/lib/http";
 import { nasaPowerResponseSchema } from "@/schemas/climate.schema";
 import type { ClimateNormals } from "@/types/climate";
-
-const NASA_POWER_URL = "https://power.larc.nasa.gov/api/temporal/climatology/point";
 
 // Long-term monthly averages barely change, so cache for the longest profile.
 export async function getClimateNormals(

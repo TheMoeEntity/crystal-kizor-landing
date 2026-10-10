@@ -3,8 +3,7 @@ import { cacheLife, cacheTag } from "next/cache";
 import { fetchJson } from "@/lib/http";
 import { geocodingResponseSchema } from "@/schemas/climate.schema";
 import type { GeoLocation } from "@/types/climate";
-
-const GEOCODING_URL = "https://geocoding-api.open-meteo.com/v1/search";
+import { GEOCODING_URL } from "@/constants/climate";
 
 // Cached for the longest profile: towns don't move. "Not found" (null) is a real
 // answer and is safe to cache; failures throw, so they are never stored.

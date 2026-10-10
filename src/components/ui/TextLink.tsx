@@ -1,9 +1,10 @@
 import type { TextLinkProps } from "@/types/ui";
 import { cn } from "@/utils/cn";
+import Link from "next/link";
 
 export function TextLink({ href, className, children }: TextLinkProps) {
   return (
-    <a
+    <Link
       href={href}
       className={cn(
         "decoration-ochre hover:decoration-ink inline-block text-lg font-medium underline decoration-2 underline-offset-8 transition-colors",
@@ -12,6 +13,6 @@ export function TextLink({ href, className, children }: TextLinkProps) {
       )}
     >
       {children}
-    </a>
+    </Link>
   );
 }

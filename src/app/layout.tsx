@@ -5,6 +5,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import Link from "next/link";
 
 const archivo = Archivo({
   subsets: ["latin", "latin-ext"],
@@ -45,12 +46,12 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" className={archivo.variable}>
       <body className="bg-concrete text-canopy font-sans antialiased">
-        <a
+        <Link
           href="#main"
           className="focus:bg-canopy focus:text-limewash sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2"
         >
           Skip to content
-        </a>
+        </Link>
         <Header />
         {children}
         <Footer />

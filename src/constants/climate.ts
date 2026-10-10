@@ -30,3 +30,7 @@ export const DEFAULT_COUNTRY_CODE = "NG";
 
 // About 1 km. NASA's grid is far coarser, so more decimals would only split the cache.
 export const COORDINATE_DECIMALS = 2;
+
+// URLS
+export const GEOCODING_URL = "https://geocoding-api.open-meteo.com/v1/search";
+export const NASA_POWER_URL = "https://power.larc.nasa.gov/api/temporal/climatology/point";
