@@ -1,6 +1,6 @@
-import type { AnchorHref } from "./common";
+import type { HomeAnchorHref } from "./common";
 
 export interface NavItem {
   label: string;
-  href: AnchorHref;
+  href: HomeAnchorHref;
 }
